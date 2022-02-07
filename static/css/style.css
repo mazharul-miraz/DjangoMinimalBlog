@@ -5,6 +5,18 @@ body{
 
 
 
-.jumbotron{
-    background:#2b2b2b ;
+.jumbotron {
+    background: #2b2b2b;
+    padding: 25px !important;
+}
+
+
+.form-control, 
+.form-control:focus{
+    background-color: #eee;
+}
+
+form{
+    color: #555;
+
 }
