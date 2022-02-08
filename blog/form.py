@@ -15,8 +15,9 @@ class SignUpForm(UserCreationForm):
 class Meta:
     model = User
     fields = ['username', 'first_name','last_name','email']
-    labels = {'first_name':'First Name','last_name':'First Name',
-    'email':'Email'}Widget ={'username':forms.TextInput(attrs={'class':'form-control'}),
+    labels = {'first_name': 'First Name', 'last_name': 'Last Name',
+    'email': 'Email'}
+    widgets = {'username':forms.TextInput(attrs={'class':'form-control'}),
     'first_name':forms.TextInput(attrs={'class':'form-control'}),
     'last_name':forms.TextInput(attrs={'class':'form-control'}),
     'email':forms.EmailInput(attrs={'class':'form-control'}),
