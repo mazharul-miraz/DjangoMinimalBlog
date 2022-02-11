@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .form import SignUpForm
+from .form import SignUpForm, LoginForm
 
 # Create your views here.
 
@@ -19,7 +19,8 @@ def dashboard(request):
     return render (request,"dashboard.html")
 
 def login(request):
-    return render (request,"login.html")
+    form = LoginForm()
+    return render (request,"login.html",{'form':form} )
 
 def logout(request):
     return render (request,"logout.html")
