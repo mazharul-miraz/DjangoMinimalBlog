@@ -40,10 +40,11 @@ def user_login(request):
     else:
         return HttpResponseRedirect('/dashboard/')
     
+
 def logout(request):
     return render (request,"logout.html")
 
-def signup(request):
-    if request.method == "POST":
-        form = SignUpForm()
+
+def user_signup(request):
+    form = SignUpForm()
     return render (request,"signup.html", {'form':form})
