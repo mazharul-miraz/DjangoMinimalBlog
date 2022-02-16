@@ -1,7 +1,8 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from httpx import post
 from .form import SignUpForm, LoginForm
-
+from .models import Post
 # Create your views here.
 from .form import SignUpForm, LoginForm
 from django.contrib import messages
@@ -10,7 +11,8 @@ from django.contrib.auth import authenticate, login, logout
 
 #home
 def home(request):
-    return render (request,"home.html")
+    posts = Post.objects.all()
+    return render (request,"home.html",{"posts":posts})
 
 def about(request):
     return render (request,"about.html")

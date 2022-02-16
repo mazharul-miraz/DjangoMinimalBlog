@@ -20,3 +20,10 @@ form{
     color: #555;
 
 }
+
+.jumbotron .blog-post{
+    background: #202124;
+    padding: 10px;
+    border: 1px solid #5f6368;
+    color: #d1d2d3;
+}
