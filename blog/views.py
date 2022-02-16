@@ -12,7 +12,7 @@ from django.contrib.auth import authenticate, login, logout
 #home
 def home(request):
     posts = Post.objects.all()
-    return render (request,"home.html",{"posts":posts})
+    return render (request,"home.html",{"posts":post})
 
 def about(request):
     return render (request,"about.html")
@@ -21,7 +21,12 @@ def contact(request):
     return render (request,"contact.html")
 
 def dashboard(request):
-    return render (request,"dashboard.html")
+    if request.user.is_authenticated:
+        return render (request,"dashboard.html")
+    else:
+        return HttpResponseRedirect("/login//")
+
+
 
 #Login
 def user_login(request):
