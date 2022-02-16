@@ -40,9 +40,10 @@ def user_login(request):
     else:
         return HttpResponseRedirect('/dashboard/')
     
-
-def logout(request):
-    return render (request,"logout.html")
+#logout 
+def log_out(request):
+    logout(request)
+    return HttpResponseRedirect ("/")
 
 
 def user_signup(request):
