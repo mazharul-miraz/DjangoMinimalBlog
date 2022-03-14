@@ -20,9 +20,11 @@ def about(request):
 def contact(request):
     return render (request,"contact.html")
 
+
 def dashboard(request):
     if request.user.is_authenticated:
-        return render (request,"dashboard.html")
+        posts = Post.objects.all()
+        return render (request,"dashboard.html",{'posts':posts})
     else:
         return HttpResponseRedirect("/login//")
 
